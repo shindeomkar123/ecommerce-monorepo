@@ -8,5 +8,9 @@ import { Component, input, output } from '@angular/core';
 })
 export class Button {
   label = input<string>();
-  clickEvent = output<string>();
+  clickEvent = output<any>();
+
+  onClick() {
+    this.clickEvent.emit(true);
+  }
 }

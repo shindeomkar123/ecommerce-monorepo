@@ -1,1 +1,10 @@
-<p>cart works!</p>
+<div class="cart-container">
+  <h3 class="heading">Shopping Cart</h3>
+  <div class="cart-details">
+    <p class="empty">Your cart is empty</p>
+    <lib-button
+      [label]="'Continue Shopping'"
+      (clickEvent)="goToCatalog()"
+    ></lib-button>
+  </div>
+</div>
