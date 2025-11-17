@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ecommerce-monorepo/ui": ["libs/ui/src/index.ts"]
+      "@ecommerce-monorepo/ui": ["libs/ui/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
