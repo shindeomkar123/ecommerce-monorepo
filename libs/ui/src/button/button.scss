@@ -1,0 +1,15 @@
+.btn-primary {
+  background-color: white;
+  color: black;
+  width: auto;
+  height: 35px;
+  border: none;
+  font-size: 16px;
+  padding: 0px 30px;
+  border: 2px solid black;
+  cursor: pointer;
+  &:hover {
+    background-color: black;
+    color: white;
+  }
+}
