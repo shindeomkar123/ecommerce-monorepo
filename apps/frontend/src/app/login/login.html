@@ -1,1 +1,19 @@
-<p>login works!</p>
+<div class="login-container">
+  <h3>Login</h3>
+  <form [formGroup]="myForm" class="login-form">
+    <div class="form-group">
+      <label for="email" class="f-label"> Email </label>
+      <input type="text" name="email" id="email" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label for="password" class="f-label"> Password </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+      />
+    </div>
+    <lib-button label="Login" (clickEvent)="onSubmit()"></lib-button>
+  </form>
+</div>
