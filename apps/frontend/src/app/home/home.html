@@ -9,13 +9,8 @@
   </div>
 
   <div class="products-container">
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
-    <lib-card></lib-card>
+    @for (item of products; track $index) {
+    <lib-card [product]="item"></lib-card>
+    }
   </div>
 </div>
