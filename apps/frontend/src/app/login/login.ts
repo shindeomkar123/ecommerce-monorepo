@@ -6,6 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Auth } from '../services/auth/auth';
+import { Session } from '../services/session/session';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,8 @@ import {
 })
 export class Login {
   fb = inject(FormBuilder);
+  authService = inject(Auth);
+  session = inject(Session);
 
   myForm = this.fb.group({
     email: ['', Validators.required],
@@ -23,8 +27,13 @@ export class Login {
 
   onSubmit() {
     if (this.myForm.valid) {
-      const email = this.myForm.get('email');
-      const password = this.myForm.get('password');
+      const email = this.myForm.get('email')?.value;
+      const password = this.myForm.get('password')?.value;
+      if (email && password) {
+        this.authService.loginUser(email, password).subscribe(({ token }) => {
+          this.session.setToken(token);
+        });
+      }
       console.log(email, password);
     }
   }
