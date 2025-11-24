@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 interface IProduct {
   title: string;
   description: string;
@@ -16,5 +16,10 @@ interface IProduct {
   styleUrl: './card.scss',
 })
 export class Card {
-  product = input<IProduct>();
+  product = input.required<IProduct>();
+  clickEvent = output<IProduct>();
+
+  onCardClick() {
+    this.clickEvent.emit(this.product());
+  }
 }

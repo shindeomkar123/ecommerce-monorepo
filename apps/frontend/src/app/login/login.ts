@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Auth } from '../services/auth/auth';
 import { Session } from '../services/session/session';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class Login {
   fb = inject(FormBuilder);
   authService = inject(Auth);
   session = inject(Session);
+  router = inject(Router);
 
   myForm = this.fb.group({
     email: ['', Validators.required],
@@ -33,8 +35,8 @@ export class Login {
         this.authService.loginUser(email, password).subscribe(({ token }) => {
           this.session.setToken(token);
         });
+        this.router.navigateByUrl('/catalog');
       }
-      console.log(email, password);
     }
   }
 }

@@ -1,4 +1,4 @@
-<div class="cards-container">
+<div class="cards-container" (click)="onCardClick()" (keypress)="onCardClick()">
   <div>
     <img class="product-img" [src]="product()?.images?.[0]" alt="" />
   </div>

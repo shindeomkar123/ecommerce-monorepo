@@ -12,4 +12,10 @@ export class Product {
   getAllProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('http://localhost:3333/api/v1/products');
   }
+
+  getProductDetail(id: string): Observable<IProduct> {
+    return this.http.get<IProduct>(
+      `http://localhost:3333/api/v1/products/${id}`
+    );
+  }
 }

@@ -1,1 +1,18 @@
-<p>details works!</p>
+@if(product){
+<div class="container">
+  <button class="back-btn">Back</button>
+  <div class="details">
+    <img [src]="product.images[0]" alt="" />
+    <div class="product-item">
+      <p>Category</p>
+      <p>{{product.title}}</p>
+      <p>{{product.currency}}{{product.price}}</p>
+      <p>{{product.description}}</p>
+      <lib-button
+        (clickEvent)="addToCart()"
+        [label]="'Add to cart'"
+      ></lib-button>
+    </div>
+  </div>
+</div>
+}

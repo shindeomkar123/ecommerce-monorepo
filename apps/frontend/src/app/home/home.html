@@ -10,7 +10,7 @@
 
   <div class="products-container">
     @for (item of products; track $index) {
-    <lib-card [product]="item"></lib-card>
+    <lib-card [product]="item" (clickEvent)="onCardClicked($event)"></lib-card>
     }
   </div>
 </div>
