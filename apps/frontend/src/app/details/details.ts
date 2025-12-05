@@ -5,6 +5,7 @@ import { Product } from '../services/product/product';
 import { IProduct } from '../models/product';
 import { CommonModule } from '@angular/common';
 import { Button } from '@ecommerce-monorepo/ui';
+import { CartService } from '../cart/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -17,6 +18,7 @@ export class Details implements OnInit {
   routerSnap = inject(ActivatedRoute);
   router = inject(Router);
   productService = inject(Product);
+  cartService = inject(CartService);
 
   ngOnInit(): void {
     this.routerSnap.params
@@ -25,7 +27,8 @@ export class Details implements OnInit {
   }
 
   addToCart() {
-    console.log(this.product);
+    this.cartService.addToCart(this.product);
+    this.router.navigateByUrl('/cart');
   }
 
   goToCatalog() {
