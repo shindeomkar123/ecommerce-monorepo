@@ -36,4 +36,8 @@ export class CartService {
     }
     this.cartItem.next(this.cartList);
   }
+
+  removeItem(item: IProduct) {
+    this.cartList.delete(item.id);
+  }
 }

@@ -33,6 +33,9 @@
             [label]="'-'"
             (clickEvent)="removeItems(item.product)"
           ></lib-button>
+          <button class="removeItem" (click)="removeFromCart(item.product)">
+            X
+          </button>
         </div>
       </div>
       }

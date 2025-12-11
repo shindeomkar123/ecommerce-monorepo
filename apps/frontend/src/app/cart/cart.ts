@@ -36,4 +36,8 @@ export class Cart implements OnInit {
   removeItems(product: IProduct) {
     this.cartService.removeFromCart(product);
   }
+
+  removeFromCart(product: IProduct) {
+    this.cartService.removeItem(product);
+  }
 }
