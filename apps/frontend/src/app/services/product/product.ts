@@ -10,12 +10,10 @@ export class Product {
   http = inject(HttpClient);
 
   getAllProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('http://localhost:3333/api/v1/products');
+    return this.http.get<IProduct[]>('/api/v1/products');
   }
 
   getProductDetail(id: string): Observable<IProduct> {
-    return this.http.get<IProduct>(
-      `http://localhost:3333/api/v1/products/${id}`
-    );
+    return this.http.get<IProduct>(`/api/v1/products/${id}`);
   }
 }

@@ -10,6 +10,6 @@ export class Auth {
 
   loginUser(email: string, password: string): Observable<any> {
     const payload = { email, password };
-    return this.http.post('http://localhost:3333/api/v1/auth/login', payload);
+    return this.http.post('/api/v1/auth/login', payload);
   }
 }
